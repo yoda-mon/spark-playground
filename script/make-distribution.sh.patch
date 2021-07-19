@@ -1,0 +1,21 @@
+diff --git a/dev/make-distribution.sh b/dev/make-distribution.sh
+index 571059be6f..d6c64581d7 100755
+--- a/dev/make-distribution.sh
++++ b/dev/make-distribution.sh
+@@ -37,6 +37,7 @@ MAKE_PIP=false
+ MAKE_R=false
+ NAME=none
+ MVN="$SPARK_HOME/build/mvn"
++SBT="$SPARK_HOME/build/sbt"
+ 
+ function exit_with_usage {
+   set +x
+@@ -166,7 +167,7 @@ export MAVEN_OPTS="${MAVEN_OPTS:--Xmx2g -XX:ReservedCodeCacheSize=1g}"
+ # Store the command as an array because $MVN variable might have spaces in it.
+ # Normal quoting tricks don't work.
+ # See: http://mywiki.wooledge.org/BashFAQ/050
+-BUILD_COMMAND=("$MVN" clean package -DskipTests $@)
++BUILD_COMMAND=("$SBT" package -DskipTests $@)
+ 
+ # Actually build the jar
+ echo -e "\nBuilding with..."
