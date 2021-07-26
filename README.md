@@ -41,6 +41,18 @@ bash script/build_spark_image.sh lib/spark-*${DATE}-${REVISION}
 bash script/build_spark_image.sh lib/spark-*${DATE}-${REVISION} yodamon x  # multiarch (repository name and docker-login required)
 ```
 
+### PySpark environment
+
+```sh
+bash script/build_pyspark_image.sh lib/spark-*${DATE}-${REVISION} 
+```
+
+```sh
+docker run --name pyspark -p 8888:8888 -d \
+  pyspark:${TAG} \
+  jupyter lab --allow-root --ip '*' --no-browser
+```
+
 ## Links
 - https://github.com/apache/spark.git
 - https://spark.apache.org/developer-tools.html#reducing-build-times
