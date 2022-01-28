@@ -15,7 +15,7 @@ index 571059be6f..d6c64581d7 100755
  # Normal quoting tricks don't work.
  # See: http://mywiki.wooledge.org/BashFAQ/050
 -BUILD_COMMAND=("$MVN" clean package -DskipTests $@)
-+BUILD_COMMAND=("$SBT" package -DskipTests $@)
++BUILD_COMMAND=("$SBT" clean package -DskipTests $@)
  
  # Actually build the jar
  echo -e "\nBuilding with..."

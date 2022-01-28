@@ -32,7 +32,6 @@ TAG=`git symbolic-ref -q --short HEAD || git describe --tags --exact-match`  # T
   --name ${DATE}-${REVISION} \
   --pip \
   --tgz \
-  -P$HADOOP_PROFILE \
   -Phadoop-cloud \
   -Pkubernetes \
   -Pkinesis-asl \
